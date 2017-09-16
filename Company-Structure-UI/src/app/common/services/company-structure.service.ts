@@ -1,14 +1,14 @@
 import { Injectable } from '@angular/core';
 
-import { CompanyData } from './../CompanyData';
+import { EmployeeData } from './../EmployeeData';
 import * as data from './current.mock.json';
 
 @Injectable()
-export class CompanyStructureServiceService {
+export class CompanyStructureService {
 
 	constructor() { }
 
-	public fetchData(): CompanyData[]|any {
+	public fetchData(): EmployeeData[]|any {
 		return data;
 	}
 

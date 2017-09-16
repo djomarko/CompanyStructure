@@ -1,23 +1,23 @@
 import { TestBed, inject } from '@angular/core/testing';
 
-import { CompanyStructureServiceService } from './company-structure-service.service';
+import { CompanyStructureService } from './company-structure.service';
 
 
 describe('CompanyStructureServiceService', () => {
 
-	let service: CompanyStructureServiceService;
+	let service: CompanyStructureService;
 
 	beforeEach(() => {
 		TestBed.configureTestingModule({
-			providers: [CompanyStructureServiceService]
+			providers: [CompanyStructureService]
 		});
 	});
 
-	beforeEach(inject([CompanyStructureServiceService], (csService: CompanyStructureServiceService) => {
+	beforeEach(inject([CompanyStructureService], (csService: CompanyStructureService) => {
 		service = csService;
 	}));
 
-	it('should be defined', inject([CompanyStructureServiceService], () => {
+	it('should be defined', inject([CompanyStructureService], () => {
 		expect(service).toBeDefined();
 	}));
 
