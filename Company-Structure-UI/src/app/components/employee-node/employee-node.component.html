@@ -1,0 +1,6 @@
+<li>
+  <a>{{ data.id}}: {{ data.name }}</a>
+  <ul>
+    <app-employee-node *ngFor="let e of data.employees" [data]="e"></app-employee-node>
+  </ul>
+</li>

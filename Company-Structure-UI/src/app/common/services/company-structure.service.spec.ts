@@ -3,7 +3,7 @@ import { TestBed, inject } from '@angular/core/testing';
 import { CompanyStructureService } from './company-structure.service';
 
 
-describe('CompanyStructureServiceService', () => {
+describe('CompanyStructureService', () => {
 
 	let service: CompanyStructureService;
 
@@ -26,8 +26,9 @@ describe('CompanyStructureServiceService', () => {
 			expect(service.fetchData).toBeDefined();
 		});
 
-		it('should bring back a list that has the CEO as the root node', () => {
-			const [root] = service.fetchData();
+		it('should bring back a Observable list that has the CEO as the root employee', () => {
+			let root;
+			service.fetchData().subscribe(data => [root] = data);
 
 			expect(root.id).toBe(150);
 			expect(root.name).toBe('Jamie');
