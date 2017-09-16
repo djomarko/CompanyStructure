@@ -1,9 +1,10 @@
-<div style="text-align:center">
-  <h1>
-    Company Structure
-  </h1>
+<div class="container">
+  <div style="text-align:center">
+    <h1>
+      Company Structure
+    </h1>
+  </div>
+  <ul>
+    <app-employee-node *ngFor="let ceo of employees" [data]="ceo"></app-employee-node>
+  </ul>
 </div>
-<ul>
-  <app-employee-node *ngFor="let ceo of employees" [data]="ceo"></app-employee-node>
-</ul>
-

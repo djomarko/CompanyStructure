@@ -1,0 +1,11 @@
+@import "node_modules/bootstrap/less/variables.less";
+@import "node_modules/bootstrap/less/mixins.less";
+@import "node_modules/bootstrap/less/list-group.less";
+
+ul {
+	&:extend(.list-group);
+
+	app-employee-node {
+		&:extend(.list-group-item);
+	}
+}

@@ -1,0 +1,13 @@
+@import "node_modules/bootstrap/less/variables.less";
+@import "node_modules/bootstrap/less/mixins.less";
+@import "node_modules/bootstrap/less/list-group.less";
+
+li {
+	&:extend(.list-group-item);
+	border: 0px;
+	padding-left: 30px;
+	 
+	a {
+		cursor: pointer;
+	}
+}
