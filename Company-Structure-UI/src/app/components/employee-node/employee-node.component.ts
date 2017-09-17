@@ -10,4 +10,10 @@ import { EmployeeData } from './../../common/EmployeeData';
 export class EmployeeNodeComponent {
 
 	@Input() data: EmployeeData;
+	showEmployees = true;
+
+	toggleHide(): void {
+		this.showEmployees = !this.showEmployees;
+	}
+
 }

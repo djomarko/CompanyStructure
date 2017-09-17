@@ -2,5 +2,9 @@
 @import "~reset.css/reset.css";
 @import "~bootstrap/dist/css/bootstrap.css";
 
+a:hover {
+	text-decoration: none;
+}
+
 
 

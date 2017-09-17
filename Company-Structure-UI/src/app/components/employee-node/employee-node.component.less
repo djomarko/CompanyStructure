@@ -1,13 +1,27 @@
 @import "node_modules/bootstrap/less/variables.less";
-@import "node_modules/bootstrap/less/mixins.less";
-@import "node_modules/bootstrap/less/list-group.less";
+@icon-font-path: "~bootstrap/fonts/";
+@import "node_modules/bootstrap/less/bootstrap.less";
 
 li {
 	&:extend(.list-group-item);
 	border: 0px;
 	padding-left: 30px;
-	 
+	padding-bottom: 2px; 
 	a {
 		cursor: pointer;
+	}
+}
+
+button {
+	i {
+		&:extend(.glyphicon);
+
+		&.extended:before {
+			&:extend(.glyphicon-chevron-down:before);
+		}
+
+		&.collapsed:before {
+			&:extend(.glyphicon-chevron-right:before);
+		}
 	}
 }

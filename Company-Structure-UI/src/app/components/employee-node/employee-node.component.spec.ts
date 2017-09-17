@@ -62,4 +62,26 @@ describe('EmployeeNodeComponent', () => {
 		expect(employeeNodes[0].querySelector('a').textContent).toContain('Ted');
 		expect(employeeNodes[1].querySelector('a').textContent).toContain('Tod');
 	});
+
+	describe('toggleHide()', () => {
+
+		it(`should have 'showEmployees' flag defined true initially`, () => {
+			expect(component.showEmployees).toBeTruthy();
+		});
+
+		it('should have the function defined', () => {
+			expect(component.toggleHide).toBeDefined();
+		});
+
+		it(`should toggle the flag 'showEmployees' whenever it's executed`, () => {
+			expect(component.showEmployees).toBeTruthy();
+
+			component.toggleHide();
+			expect(component.showEmployees).toBeFalsy();
+
+			component.toggleHide();
+			expect(component.showEmployees).toBeTruthy();
+		});
+
+	});
 });
