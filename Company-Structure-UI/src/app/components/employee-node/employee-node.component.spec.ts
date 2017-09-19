@@ -19,7 +19,7 @@ describe('EmployeeNodeComponent', () => {
 		component = fixture.componentInstance;
 		component.data =  { id: 1,
 				name: 'Smith',
-				employees: []
+				subordinates: []
 			};
 		fixture.detectChanges();
 	});
@@ -41,16 +41,16 @@ describe('EmployeeNodeComponent', () => {
 	it(`should show employees 'Ted' and 'Tod' that are managed by 'Smith'`, () => {
 		component.data =  { id: 1,
 			name: 'Smith',
-			employees: [
+			subordinates: [
 				{
 					id: 2,
 					name: 'Ted',
-					employees: []
+					subordinates: []
 				},
 				{
 					id: 3,
 					name: 'Tod',
-					employees: []
+					subordinates: []
 				}
 			]
 		};

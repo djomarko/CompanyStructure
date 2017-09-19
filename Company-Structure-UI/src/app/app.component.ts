@@ -10,13 +10,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AppComponent implements OnInit {
 
-	employees: EmployeeData[];
+	subordinates: EmployeeData[];
 
 	constructor(private service: CompanyStructureService) {	}
 
 	ngOnInit(): void {
 		this.service.fetchData()
-			.subscribe(data => this.employees = data);
+			.subscribe(data => this.subordinates = data);
 	}
 
 }

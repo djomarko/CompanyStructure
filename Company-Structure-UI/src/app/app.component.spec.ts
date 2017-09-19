@@ -1,9 +1,12 @@
+import { HttpModule } from '@angular/http';
 import { EmployeeNodeComponent } from './components/employee-node/employee-node.component';
 import { TestBed, async } from '@angular/core/testing';
 import { AppComponent } from './app.component';
+
 describe('AppComponent', () => {
 	beforeEach(async(() => {
 		TestBed.configureTestingModule({
+			imports: [ HttpModule ],
 			declarations: [
 				AppComponent,
 				EmployeeNodeComponent

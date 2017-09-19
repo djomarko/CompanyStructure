@@ -1,9 +1,9 @@
 <li>
-  <button *ngIf="data.employees.length" (click)="toggleHide()">
+  <button *ngIf="data.subordinates.length" (click)="toggleHide()">
     <i [ngClass]="showEmployees? 'extended' : 'collapsed'"></i>
   </button> 
   <a>{{ data.id }}: {{ data.name }}</a>
   <ul [hidden]="!showEmployees">
-    <app-employee-node *ngFor="let e of data.employees" [data]="e"></app-employee-node>
+    <app-employee-node *ngFor="let e of data.subordinates" [data]="e"></app-employee-node>
   </ul>
 </li>

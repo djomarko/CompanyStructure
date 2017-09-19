@@ -1,6 +1,9 @@
 import { TestBed, inject } from '@angular/core/testing';
-
+import { Http, BaseRequestOptions, ResponseOptions, Response, RequestMethod } from '@angular/http';
+import { MockBackend, MockConnection } from '@angular/http/testing';
 import { CompanyStructureService } from './company-structure.service';
+
+import * as data from './../current.mock.json';
 
 
 describe('CompanyStructureService', () => {
@@ -9,12 +12,34 @@ describe('CompanyStructureService', () => {
 
 	beforeEach(() => {
 		TestBed.configureTestingModule({
-			providers: [CompanyStructureService]
+			providers: [[
+				MockBackend,
+				BaseRequestOptions,
+				CompanyStructureService,
+				{
+					provide: Http,
+					useFactory: (backend: MockBackend, options: BaseRequestOptions) => {
+						return new Http(backend, options);
+					},
+					deps: [MockBackend, BaseRequestOptions]
+				}]]
 		});
 	});
 
-	beforeEach(inject([CompanyStructureService], (csService: CompanyStructureService) => {
+	beforeEach(inject([CompanyStructureService, MockBackend], (csService: CompanyStructureService, backend: MockBackend) => {
 		service = csService;
+
+		const expectedUrl = '/api/employees';
+
+		backend.connections.subscribe(
+			(connection: MockConnection) => {
+				expect(connection.request.method).toBe(RequestMethod.Get);
+				expect(connection.request.url).toBe(expectedUrl);
+
+			connection.mockRespond(new Response(
+				new ResponseOptions({ body: data })
+			));
+		});
 	}));
 
 	it('should be defined', inject([CompanyStructureService], () => {
@@ -32,7 +57,7 @@ describe('CompanyStructureService', () => {
 
 			expect(root.id).toBe(150);
 			expect(root.name).toBe('Jamie');
-			expect(root.employees.length).toBe(2);
+			expect(root.subordinates.length).toBe(2);
 		});
 	});
 });

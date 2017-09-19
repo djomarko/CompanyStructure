@@ -1,31 +1,31 @@
 [{
 	"id": 150,
 	"name": "Jamie",
-	"employees": [
+	"subordinates": [
 		{
 			"id": 100,
 			"name": "Alan",
-			"employees": [
+			"subordinates": [
 				{
 					"id": 220,
 					"name": "Martin",
-					"employees":[]
+					"subordinates":[]
 				},
 				{
 					"id": 275,
 					"name": "Alex",
-					"employees":[]
+					"subordinates":[]
 				}
 			]
 		},
 		{
 			"id": 400,
 			"name": "Steve",
-			"employees":[
+			"subordinates":[
 				{
 					"id": 190,
 					"name": "David",
-					"employees":[]
+					"subordinates":[]
 				}
 			]
 		}
